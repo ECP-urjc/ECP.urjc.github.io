@@ -3,39 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- =========================================================
-         NOMBRE DEL VIDEOJUEGO
-    ========================================================== -->
     <title>Xnombre | ECP</title>
-    <meta name="description" content="Portfolio oficial del videojuego Xnombre, desarrollado por el equipo ECP.">
+    <meta name="description" content="Web oficial del videojuego Xnombre, desarrollado por el estudio ECP.">
 
-    <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================================================
-         NAVBAR
-    ========================================================== -->
+    <!-- NAVBAR -->
     <header class="site-nav" id="mainNav">
         <div class="container nav-container">
+            <a href="#inicio" class="logo">ECP · Xnombre</a>
 
-            <!-- Logo / nombre del juego -->
-            <a href="#inicio" class="logo">
-                Xnombre
-            </a>
-
-            <!-- Botón que aparece en móvil -->
             <button class="nav-toggle" type="button" aria-label="Abrir menú">
                 <i class="fa-solid fa-bars"></i>
             </button>
@@ -43,465 +27,338 @@
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                    <li><a href="#juego" class="nav-link">El juego</a></li>
-                    <li><a href="#gameplay" class="nav-link">Gameplay</a></li>
-                    <li><a href="#galeria" class="nav-link">Galería</a></li>
-                    <li><a href="#equipo" class="nav-link">Equipo ECP</a></li>
+                    <li><a href="#estudio" class="nav-link">Estudio</a></li>
+                    <li><a href="#juego" class="nav-link">Juego</a></li>
+                    <li><a href="#devlog" class="nav-link">Devlog</a></li>
+                    <li><a href="#marketing" class="nav-link">Marketing</a></li>
+                    <li><a href="#tecnico" class="nav-link">Técnico</a></li>
+                    <li><a href="#resultados" class="nav-link">Resultados</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
             </nav>
-
         </div>
     </header>
 
-
-    <!-- =========================================================
-        PORTADA
-         imagen grande del juego.
-    ========================================================== -->
     <main>
 
+        <!-- 1. INICIO -->
         <section class="hero" id="inicio">
             <div class="container hero-content">
-
                 <div>
+                    <img class="studio-logo" src="assets/img/logo-ecp.png" alt="Logo del estudio ECP">
                     <p class="hero-subtitle">ECP presenta</p>
-
-                    <h1 class="hero-title">
-                        Xnombre
-                    </h1>
-
-                    <p class="hero-subtitle">
-                        Una pequeña frase que defina vuestro videojuego.
+                    <h1 class="hero-title">Xnombre</h1>
+                    <p class="hero-subtitle">Definición videojuego</p>
+                    <p class="hero-text">
+                        presentación breve del estudio.
                     </p>
-
-                    <a href="#juego" class="button">
-                        Descubrir el juego
+                    <a href="#" class="button button-primary" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-play"></i> Jugar la demo
                     </a>
+                    <a href="#juego" class="button button-outline">Descubrir el juego</a>
                 </div>
 
-                <!-- Cambia esta imagen por el key art / portada -->
-                <div class="hero-image">
-                    <img src="assets/img/game/key-art.png"
-                         alt="Arte principal de Xnombre">
+                <div class="hero-image hero-media">
+                    <img src="assets/img/game/key-art.png" alt="Arte principal de Xnombre">
                 </div>
-
             </div>
         </section>
 
 
-        <!-- =====================================================
-             2. EL JUEGO
-             Presentación general del videojuego.
-        ====================================================== -->
+        <!-- 2. SOBRE EL ESTUDIO -->
+        <section class="section" id="estudio">
+            <div class="container">
+                <h2 class="section-title">Sobre el estudio</h2>
+                <div class="section-divider"><span></span><i class="fa-solid fa-star"></i><span></span></div>
+
+                <div class="card-grid card-grid-3">
+                    <article class="card">
+                        <h3><i class="fa-solid fa-bullseye"></i> Misión</h3>
+                        <p>Qué hace ECP y para quién lo hace.</p>
+                    </article>
+                    <article class="card">
+                        <h3><i class="fa-solid fa-eye"></i> Visión</h3>
+                        <p>Dónde queremos que esté el estudio en el futuro.</p>
+                    </article>
+                    <article class="card">
+                        <h3><i class="fa-solid fa-book-open"></i> Historia del proyecto</h3>
+                        <p>Cómo se formó el equipo y cómo nació la idea de Xnombre.</p>
+                    </article>
+                </div>
+
+                <h3 class="subtitle">Miembros del equipo</h3>
+
+                <div class="contenedor">
+                    <div class="cuadro">
+                        <div class="cara frente"><div class="contenido">
+                            <img src="../Images/carla.jpg" alt="Foto de perfil de Carla">
+                        </div></div>
+                        <div class="cara atras"><div class="contenido">
+                            <h2>CARLA</h2>
+                            <p>Programadora web y perfil creativo de narrativa, edición de vídeo y maquetación de memorias y GDDs.</p>
+                            <a href="https://www.instagram.com/_carlaaa05_/" target="_blank" rel="noopener">RR.SS</a>
+                        </div></div>
+                    </div>
+
+                    <div class="cuadro">
+                        <div class="cara frente"><div class="contenido">
+                            <img src="../Images/hugo.jpg" alt="Foto de perfil de Jaime">
+                        </div></div>
+                        <div class="cara atras"><div class="contenido">
+                            <h2>JAIME</h2>
+                            <p>Escribe aquí el rol de Jaime en el equipo.</p>
+                            <a href="https://www.instagram.com/huuu_gooos?igsh=ZjZrZHJ6a29lbzM0&utm_source=qr" target="_blank" rel="noopener">RR.SS</a>
+                        </div></div>
+                    </div>
+
+                    <div class="cuadro">
+                        <div class="cara frente"><div class="contenido">
+                            <img src="../Images/lucia.jpg" alt="Foto de perfil de Lucía">
+                        </div></div>
+                        <div class="cara atras"><div class="contenido">
+                            <h2>LUCÍA</h2>
+                            <p>Escribe aquí el rol de Lucía en el equipo.</p>
+                            <a href="https://www.instagram.com/_justjorg3_/" target="_blank" rel="noopener">RR.SS</a>
+                        </div></div>
+                    </div>
+
+                    <div class="cuadro">
+                        <div class="cara frente"><div class="contenido">
+                            <img src="../Images/ruben.jpg" alt="Foto de perfil de Rubén">
+                        </div></div>
+                        <div class="cara atras"><div class="contenido">
+                            <h2>RUBÉN</h2>
+                            <p>Escribe aquí el rol de Rubén en el equipo.</p>
+                            <a href="https://www.instagram.com/sriven_55/" target="_blank" rel="noopener">RR.SS</a>
+                        </div></div>
+                    </div>
+
+                    <div class="cuadro">
+                        <div class="cara frente"><div class="contenido">
+                            <img src="../Images/david.jpg" alt="Foto de perfil de David">
+                        </div></div>
+                        <div class="cara atras"><div class="contenido">
+                            <h2>DAVID</h2>
+                            <p>Escribe aquí el rol de David en el equipo.</p>
+                            <a href="https://www.instagram.com/oscarpinadero099/" target="_blank" rel="noopener">RR.SS</a>
+                        </div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 3. NUESTRO JUEGO -->
         <section class="section" id="juego">
             <div class="container">
-
-                <h2 class="section-title">El juego</h2>
-                <div class="section-divider"></div>
+                <h2 class="section-title">Nuestro juego</h2>
+                <div class="section-divider"><span></span><i class="fa-solid fa-star"></i><span></span></div>
 
                 <div class="about-grid">
-
-                    <div>
-                        <h3>¿Qué es Xnombre?</h3>
-
-                        <p>
-                            Escribe aquí una presentación breve del videojuego:
-                            género, ambientación, premisa y qué hace especial
-                            vuestra propuesta.
-                        </p>
-
-                        <p>
-                            Este texto puede ocupar uno o dos párrafos.
-                            No hace falta contar toda la historia aquí.
-                        </p>
+                    <div class="card">
+                        <h3>Pitch</h3>
+                        <p>Descripción corta de Xnombre en dos o tres frases: qué haces, dónde y por qué es especial.</p>
                     </div>
-
-                    <div>
+                    <div class="card">
                         <h3>Ficha del juego</h3>
-
                         <p><strong>Género:</strong> Género del videojuego</p>
-                        <p><strong>Plataforma:</strong> PC / Unity / etc.</p>
-                        <p><strong>Motor:</strong> Unity / Unreal / Godot...</p>
-                        <p><strong>Jugadores:</strong> 1 jugador / multijugador</p>
+                        <p><strong>Plataforma:</strong> PC / Itch.io</p>
+                        <p><strong>Motor:</strong> Unity / Unreal / Godot</p>
+                        <p><strong>Jugadores:</strong> 1 jugador</p>
                         <p><strong>Estado:</strong> En desarrollo</p>
                     </div>
-
                 </div>
 
-            </div>
-        </section>
+                <h3 class="subtitle">Características principales</h3>
+                <div class="card-grid card-grid-3">
+                    <article class="card"><h3><i class="fa-solid fa-gamepad"></i> Mecánica principal</h3><p>Explicación breve.</p></article>
+                    <article class="card"><h3><i class="fa-solid fa-compass"></i> Exploración</h3><p>Explicación breve.</p></article>
+                    <article class="card"><h3><i class="fa-solid fa-trophy"></i> Desafíos</h3><p>Explicación breve.</p></article>
+                </div>
 
-
-        <!-- =====================================================
-             3. GAMEPLAY / CARACTERÍSTICAS
-             como se juega.
-        ====================================================== -->
-        <section class="section" id="gameplay">
-            <div class="container">
-
-                <h2 class="section-title">Gameplay</h2>
-                <div class="section-divider"></div>
-
-                <p class="section-intro">
-                    Explica aquí qué hace el jugador, cuáles son las mecánicas
-                    principales y qué tipo de experiencia queréis conseguir.
-                </p>
-
+                <h3 class="subtitle">Capturas</h3>
                 <div class="portfolio-grid">
-
-                    <!-- mecanica 1 -->
-                    <article class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/img/game/gameplay-01.png"
-                                 alt="Mecánica principal de Xnombre">
-                        </div>
-
-                        <div class="portfolio-overlay">
-                            <h3>Mecánica principal</h3>
-                            <p>Explicación breve de esta mecánica.</p>
-                        </div>
+                    <article class="portfolio-card" tabindex="0">
+                        <div class="portfolio-image"><img src="assets/img/game/gallery-01.png" alt="Captura 1 de Xnombre"></div>
+                        <div class="portfolio-overlay"><h3>Captura 01</h3></div>
                     </article>
-
-                    <!-- mecanica 2 -->
-                    <article class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/img/game/gameplay-02.png"
-                                 alt="Segunda mecánica de Xnombre">
-                        </div>
-
-                        <div class="portfolio-overlay">
-                            <h3>Exploración</h3>
-                            <p>Explicación breve de esta mecánica.</p>
-                        </div>
+                    <article class="portfolio-card" tabindex="0">
+                        <div class="portfolio-image"><img src="assets/img/game/gallery-02.png" alt="Captura 2 de Xnombre"></div>
+                        <div class="portfolio-overlay"><h3>Captura 02</h3></div>
                     </article>
-
-                    <!-- mecanica 3 -->
-                    <article class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/img/game/gameplay-03.png"
-                                 alt="Tercera mecánica de Xnombre">
-                        </div>
-
-                        <div class="portfolio-overlay">
-                            <h3>Desafíos</h3>
-                            <p>Explicación breve de esta mecánica.</p>
-                        </div>
+                    <article class="portfolio-card" tabindex="0">
+                        <div class="portfolio-image"><img src="assets/img/game/gallery-03.png" alt="Concept art de Xnombre"></div>
+                        <div class="portfolio-overlay"><h3>Concept art</h3></div>
                     </article>
-
                 </div>
 
-            </div>
-        </section>
-
-
-        <!-- =====================================================
-             4. MUNDO / HISTORIA
-             Si el juego no tiene una historia importante,
-             cambiar esta sección por "Diseño", "Niveles",
-             "Personajes", etc.
-        ====================================================== -->
-        <section class="section" id="historia">
-            <div class="container">
-
-                <h2 class="section-title">Mundo e historia</h2>
-                <div class="section-divider"></div>
-
-                <div class="about-grid">
-
-                    <div>
-                        <h3>El mundo</h3>
-                        <p>
-                            Describe aquí el universo del videojuego,
-                            la ambientación, localizaciones o contexto.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3>La historia</h3>
-                        <p>
-                            Escribe aquí un resumen de la historia sin
-                            necesidad de contar todos los spoilers.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- =====================================================
-             5. GALERÍA
-             Capturas, concept art, personajes, escenarios...
-        ====================================================== -->
-        <section class="section" id="galeria">
-            <div class="container">
-
-                <h2 class="section-title">Galería</h2>
-                <div class="section-divider"></div>
-
-                <p class="section-intro">
-                    Capturas del juego, concept art, personajes,
-                    escenarios y material del desarrollo.
-                </p>
-
-                <div class="portfolio-grid">
-
-                    <article class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/img/game/gallery-01.png"
-                                 alt="Captura de Xnombre">
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3>Captura 01</h3>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/img/game/gallery-02.png"
-                                 alt="Captura de Xnombre">
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3>Captura 02</h3>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/img/game/gallery-03.png"
-                                 alt="Concept art de Xnombre">
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3>Concept Art</h3>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/img/game/gallery-04.png"
-                                 alt="Personaje de Xnombre">
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3>Personaje</h3>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/img/game/gallery-05.png"
-                                 alt="Escenario de Xnombre">
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3>Escenario</h3>
-                        </div>
-                    </article>
-
-                    <article class="portfolio-card">
-                        <div class="portfolio-image">
-                            <img src="assets/img/game/gallery-06.png"
-                                 alt="Desarrollo de Xnombre">
-                        </div>
-                        <div class="portfolio-overlay">
-                            <h3>Desarrollo</h3>
-                        </div>
-                    </article>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <section class="section" id="equipo">
-            <h2 class="section-title">Equipo</h2>
-            <div class="contenedor">
-            <div class="cuadro">
-                <div class="cara frente">
-                <div class="contenido">
-                    <img src="../Images/carla.jpg" alt="Foto de perfil de Carla">
-                </div>
-                </div>
-                <div class="cara atras">
-                <div class="contenido">
-                    <h2>CARLA</h2>
-                    <p>
-                    Programadora web y perfil creativo de narrativa, edición de vídeo y maquetación de memorias y GDDs.<br>
-                    </p>
-                    <a href="https://www.instagram.com/_carlaaa05_/" target="_blank">RR.SS</a>
-                </div>
-                </div>
-            </div>
-            <div class="cuadro">
-                <div class="cara frente">
-                <div class="contenido">
-                    <img src="../Images/hugo.jpg" alt="Foto de perfil de Jaime">
-                </div>
-                </div>
-                <div class="cara atras">
-                <div class="contenido">
-                    <h2>JAIME</h2>
-                    <p>
-                    Programadora web y perfil creativo de narrativa, edición de vídeo y maquetación de memorias y GDDs.<br>
-                    </p>
-                    <a href="https://www.instagram.com/huuu_gooos?igsh=ZjZrZHJ6a29lbzM0&utm_source=qr">RR.SS</a>
-                </div>
-                </div>
-            </div>
-            <div class="cuadro">
-                <div class="cara frente">
-                <div class="contenido">
-                    <img src="../Images/lucia.jpg" alt="Foto de perfil de Lucía">
-                </div>
-                </div>
-                <div class="cara atras">
-                <div class="contenido">
-                    <h2>LUCÍA</h2>
-                    <p>
-                    Programadora web y perfil creativo de narrativa, edición de vídeo y maquetación de memorias y GDDs. </br>                 
-                    </p>
-                    <a href="https://www.instagram.com/_justjorg3_/">RR.SS</a>
-                </div>
-                </div>
-            </div>
-            <div class="cuadro">
-                <div class="cara frente">
-                <div class="contenido">
-                    <img src="../Images/ruben.jpg" alt="Foto de perfil de Rubén">
-                </div>
-                </div>
-                <div class="cara atras">
-                <div class="contenido">
-                    <h2>RUBÉN</h2>
-                    <p>
-                    Programadora web y perfil creativo de narrativa, edición de vídeo y maquetación de memorias y GDDs. </br>                 
-                    </p>
-                    <a href="https://www.instagram.com/sriven_55/" target="_blank">RR.SS</a>
-                </div>
-                </div>
-            </div>
-            <div class="cuadro">
-                <div class="cara frente">
-                <div class="contenido">
-                    <img src="../Images/david.jpg" alt="Foto de perfil de David">
-                </div>
-                </div>
-                <div class="cara atras">
-                <div class="contenido">
-                    <h2>DAVID</h2>
-                    <p>
-                    Programadora web y perfil creativo de narrativa, edición de vídeo y maquetación de memorias y GDDs. </br>                 
-                    </p>
-                    <a href="https://www.instagram.com/oscarpinadero099/" target="_blank">RR.SS</a>
-                </div>
-                </div>
-            </div>   
-        </section>
-
-
-        <!-- =====================================================
-             7. DESARROLLO
-             Útil para enseñar el proceso del proyecto.
-             Puedes eliminar esta sección si no os la piden.
-        ====================================================== -->
-        <section class="section" id="desarrollo">
-            <div class="container">
-
-                <h2 class="section-title">Desarrollo</h2>
-                <div class="section-divider"></div>
-
-                <div class="about-grid">
-
-                    <div>
-                        <h3>Proceso</h3>
-                        <p>
-                            Explica brevemente cómo nació la idea y cómo
-                            ha evolucionado el proyecto.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3>Herramientas</h3>
-                        <p>
-                            Unity, Blender, Photoshop, GitHub, Visual Studio,
-                            Photoshop, Illustrator, etc.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- =====================================================
-             8. TRAILER / VÍDEO
-             Puedes sustituir el vídeo por un iframe de YouTube.
-        ====================================================== -->
-        <section class="section" id="trailer">
-            <div class="container">
-
-                <h2 class="section-title">Tráiler</h2>
-                <div class="section-divider"></div>
-
-                <!--
-                    Sustituye VIDEO_ID por el identificador del vídeo.
-                    Ejemplo:
-                    https://www.youtube.com/embed/VIDEO_ID
-                -->
-
+                <h3 class="subtitle">Vídeo de gameplay</h3>
+                <!-- sustituir VIDEO_ID por el id de YouTube -->
                 <div class="video-container">
-                    <iframe
-                        src="https://www.youtube.com/embed/VIDEO_ID"
-                        title="Tráiler de Xnombre"
-                        allowfullscreen>
-                    </iframe>
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Gameplay de Xnombre" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. DEVLOG -->
+        <section class="section" id="devlog">
+            <div class="container">
+                <h2 class="section-title">Devlog</h2>
+                <div class="section-divider"><span></span><i class="fa-solid fa-star"></i><span></span></div>
+
+                <ol class="timeline">
+                    <li class="card"><h3>Semana 1-2 · Idea y prototipo</h3><p>Qué se hizo en esta fase.</p></li>
+                    <li class="card"><h3>Semana 3-4 · Mecánicas base</h3><p>Qué se hizo en esta fase.</p></li>
+                    <li class="card"><h3>Semana 5-6 · Arte y niveles</h3><p>Qué se hizo en esta fase.</p></li>
+                    <li class="card"><h3>Semana 7-8 · Pulido y demo</h3><p>Qué se hizo en esta fase.</p></li>
+                </ol>
+            </div>
+        </section>
+
+
+        <!-- 5. MARKETING -->
+        <section class="section" id="marketing">
+            <div class="container">
+                <h2 class="section-title">Marketing</h2>
+                <div class="section-divider"><span></span><i class="fa-solid fa-star"></i><span></span></div>
+
+                <div class="card-grid">
+                    <article class="card">
+                        <h3><i class="fa-solid fa-users"></i> Público objetivo</h3>
+                        <p>Edad, tipo de jugador y plataformas donde juega.</p>
+                    </article>
+                    <article class="card">
+                        <h3><i class="fa-solid fa-rocket"></i> Estrategia de lanzamiento</h3>
+                        <p>Demo en Itch.io, redes sociales, tráiler, festivales...</p>
+                    </article>
                 </div>
 
+                <h3 class="subtitle">Juegos similares</h3>
+                <div class="table-wrap">
+                    <table class="table">
+                        <thead>
+                            <tr><th>Juego</th><th>Similitud</th><th>Qué nos diferencia</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Juego 1</td><td>Qué tiene en común</td><td>Qué hacemos distinto</td></tr>
+                            <tr><td>Juego 2</td><td>Qué tiene en común</td><td>Qué hacemos distinto</td></tr>
+                            <tr><td>Juego 3</td><td>Qué tiene en común</td><td>Qué hacemos distinto</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="subtitle">Plataformas</h3>
+                <ul class="tag-list">
+                    <li><i class="fa-brands fa-steam"></i> Steam</li>
+                    <li><i class="fa-solid fa-gamepad"></i> Itch.io</li>
+                    <li><i class="fa-brands fa-youtube"></i> YouTube</li>
+                    <li><i class="fa-brands fa-instagram"></i> Instagram</li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- 6. ASPECTOS TÉCNICOS -->
+        <section class="section" id="tecnico">
+            <div class="container">
+                <h2 class="section-title">Aspectos técnicos</h2>
+                <div class="section-divider"><span></span><i class="fa-solid fa-star"></i><span></span></div>
+
+                <div class="card-grid card-grid-3">
+                    <article class="card">
+                        <h3><i class="fa-solid fa-code"></i> Programación</h3>
+                        <p>Sistemas más destacados y herramientas: Unity, C#, GitHub, Visual Studio.</p>
+                    </article>
+                    <article class="card">
+                        <h3><i class="fa-solid fa-palette"></i> Arte y diseño</h3>
+                        <p>Estilo visual, paleta y herramientas: Blender, Photoshop, Illustrator.</p>
+                    </article>
+                    <article class="card">
+                        <h3><i class="fa-solid fa-music"></i> Audio y efectos</h3>
+                        <p>Música, efectos de sonido y cómo se han integrado.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 7. RESULTADOS -->
+        <section class="section" id="resultados">
+            <div class="container">
+                <h2 class="section-title">Resultados</h2>
+                <div class="section-divider"><span></span><i class="fa-solid fa-star"></i><span></span></div>
+
+                <div class="stats">
+                    <div class="card stat"><strong>0</strong><span>Semanas de desarrollo</span></div>
+                    <div class="card stat"><strong>0</strong><span>Commits en GitHub</span></div>
+                    <div class="card stat"><strong>0</strong><span>Líneas de código</span></div>
+                    <div class="card stat"><strong>0</strong><span>Jugadores en pruebas</span></div>
+                </div>
+
+                <div class="card feedback">
+                    <h3>Feedback y pruebas</h3>
+                    <p>Cuenta qué pruebas habéis hecho, qué opinaron los jugadores y qué cambiasteis a partir de ello.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 8. CONTACTO Y RRSS -->
+        <section class="section contact-section" id="contacto">
+            <div class="container contact-container">
+                <h2 class="section-title">Contacto y redes</h2>
+                <div class="section-divider"><span></span><i class="fa-solid fa-star"></i><span></span></div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="button button-primary">Enviar mensaje</button>
+                    <p class="form-message"></p>
+                </form>
+
+                <p class="contact-mail"><i class="fa-solid fa-envelope"></i> ecpurjc@gmail.com</p>
             </div>
         </section>
 
     </main>
 
 
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
+    <!-- FOOTER -->
     <footer class="site-footer">
-
-        <div class="container">
-
+        <div class="container footer-grid">
             <div>
                 <h3>Xnombre</h3>
                 <p>Videojuego desarrollado por ECP.</p>
             </div>
-
-            <div class="footer-social">
-                <!-- Añade aquí redes o enlaces del proyecto -->
-                <a href="#" aria-label="Instagram">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a href="#" aria-label="GitHub">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-
-                <a href="#" aria-label="YouTube">
-                    <i class="fa-brands fa-youtube"></i>
-                </a>
+            <div>
+                <h3>Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/ecpurjc/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/ECP-urjc/ECP.urjc.github.io" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://youtube.com/@ecpurjc?si=TXAxWzbmYzz5u997" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://ecp-urjc.itch.io/" aria-label="Itch.io"><i class="fa-brands fa-itch-io"></i></a>
+                    <a href="https://x.com/ECP_urjc" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
             </div>
-
+            <div>
+                <h3>Demo</h3>
+                <a href="#" class="button button-outline" target="_blank" rel="noopener">Jugar la demo</a>
+            </div>
         </div>
-
-        <div class="copyright">
-            © 2026 ECP — Xnombre
-        </div>
-
+        <div class="copyright">© 2026 ECP — Xnombre</div>
     </footer>
 
-
-    <!-- JS -->
     <script src="scripts.js"></script>
-
 </body>
 </html>
