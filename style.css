@@ -541,17 +541,15 @@ a {
 
 .contenedor {
     position: relative;
-
     display: flex;
     justify-content: center;
-
-    gap: 120px;
-
+    gap: 30px;
     flex-wrap: wrap;
 }
 
 .contenedor .cuadro {
     position: relative;
+    margin-bottom: -100px;
 }
 
 .contenedor .cuadro .cara {
@@ -1173,7 +1171,7 @@ a {
 }
 
 .studio-logo { 
-    width: 90px; 
+    width: 200px; 
     margin: 0 auto 15px; 
 }
 .hero-text { 
@@ -1247,7 +1245,7 @@ a {
 
 /* Equipo dentro de Sobre el estudio */
 .contenedor { 
-    padding-bottom: 100px; 
+    padding-bottom: 0px; 
 }
 
 /* Vídeo */
