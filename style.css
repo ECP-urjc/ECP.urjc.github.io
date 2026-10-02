@@ -36,8 +36,8 @@
     --color-warning: #F7B8B2;
     --color-error: #B94B5F;
 
-    --font-title: "Montserrat", sans-serif;
-    --font-body: "Lato", sans-serif;
+    --font-title: "Aladin", system-ui;
+    --font-body: "Faculty Glyphic", sans-serif;
 
     --container-width: 1200px;
     --section-padding: 100px;
@@ -240,7 +240,7 @@ a {
 }
 
 .section-title {
-    text-shadow: white 0px 0px 4px;;
+    text-shadow: white 0px 0px 4px;
     margin: 0;
     text-align: center;
     font-family: var(--font-title);
@@ -336,12 +336,12 @@ a {
 .nav-link {
     padding: 10px 16px;
     border-radius: 8px;
+    font-size: 1.05rem;
 
     color: var(--color-white);
+    text-shadow: #000;
 
     font-family: var(--font-title);
-    font-size: 0.9rem;
-    font-weight: 600;
 
     transition:
         background var(--transition),
@@ -613,7 +613,7 @@ a {
 .contenedor .cuadro .cara.frente .contenido h1 {
     font-size: 3em;
     color: white;
-
+    
     display: inline-block;
 }
 
@@ -626,6 +626,7 @@ a {
 
 .contenedor .cuadro .cara.frente .contenido a {
     transition: 0.5s;
+    font-family: "Aladin", system-ui;
 }
 
 .contenedor .cuadro .cara.atras {
@@ -658,10 +659,17 @@ a {
 
 .contenedor .cuadro:hover .cara.atras {
     transform: translateY(0);
+    
+}
+
+.contenedor .cuadro .cara.atras h2{
+    font-family: "Aladin", system-ui;
+    
 }
 
 .contenedor .cuadro .cara.atras .contenido a {
     color: #fff;
+    font-family: "Aladin", system-ui;
 
     border: 1px solid #fff;
 
