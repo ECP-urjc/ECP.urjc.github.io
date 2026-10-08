@@ -1,0 +1,29 @@
+// Ideas para THE LAST CURE //
+
+/*
+    - Movimiento
+        [DONE] WASD moverse
+        [DONE] SPACE saltar
+        * posible salto en paredes (Combos)
+
+    - Disparo
+        [DONE pero con "I"] CLICK CERECHO apuntar
+        CLICK IZQUIERDO disparar
+        [DONE] R recargar balas
+
+    - UI Ideas
+        * Si mantienes pulsado el shift se relentiza el tiempo (carga)
+        * Agarras carga de matar zombies
+        [DONE] La salud se regenera con FAK (first aid kit) que se encuentran en el mapa
+        [DONE] LAs valas tambien se pillan por el mapa
+        [DONE] Al apuntar, la camara se pone donde el jugador, al dejar de apuntar detras de este
+
+
+// PARA FUTURO
+
+- Tener tiempo para llegar de unas zonas a otras, se puede aumentar el tiempo si haces combos o matas zombies.
+- Juego infinito en vez de por niveles.
+- Musica para lock the fuck in. que la experiencia de juego vaya con la música.
+
+
+*/
