@@ -312,7 +312,12 @@
                 <h2 class="section-title">Contacto y redes</h2>
                 <div class="section-divider"><span></span><i class="fa-solid fa-star"></i><span></span></div>
 
-                <form class="contact-form">
+                <form class="contact-form" action="https://formsubmit.co/ecpurjc@gmail.com" method="POST">
+                    <!-- Campos ocultos de configuración -->
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de THE LAST CURE">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre" name="nombre" required>
@@ -325,11 +330,15 @@
                         <label for="mensaje">Mensaje</label>
                         <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
                     </div>
+
                     <button type="submit" class="button button-primary">Enviar mensaje</button>
-                    <p class="form-message"></p>
+                    <p class="form-message" role="status" aria-live="polite"></p>
                 </form>
 
-                <p class="contact-mail"><i class="fa-solid fa-envelope"></i> ecpurjc@gmail.com</p>
+                <p class="contact-mail">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:ecpurjc@gmail.com">ecpurjc@gmail.com</a>
+                </p>
             </div>
         </section>
 

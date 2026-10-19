@@ -225,17 +225,44 @@ document.addEventListener("DOMContentLoaded", function () {
     // FORMULARIO DE CONTACTO
     // ========================================================
 
-    const contactForm = document.querySelector(".contact-form");
+        const contactForm = document.querySelector(".contact-form");
 
     if (contactForm) {
 
-        contactForm.addEventListener("submit", function (event) {
+        const message = contactForm.querySelector(".form-message");
+        const submitButton = contactForm.querySelector("button[type='submit']");
+
+        contactForm.addEventListener("submit", async function (event) {
 
             event.preventDefault();
 
-            alert(
-                "Formulario preparado. Para enviar mensajes de verdad tendrás que conectarlo a un backend o servicio de formularios."
-            );
+            message.className = "form-message";
+            message.textContent = "Enviando...";
+            submitButton.disabled = true;
+
+            try {
+                const response = await fetch("https://formsubmit.co/ajax/ecpurjc@gmail.com", {
+                    method: "POST",
+                    headers: { "Accept": "application/json" },
+                    body: new FormData(contactForm)
+                });
+
+                const data = await response.json();
+
+                if (response.ok && String(data.success) === "true") {
+                    message.textContent = "¡Mensaje enviado! Te responderemos pronto.";
+                    message.classList.add("is-success");
+                    contactForm.reset();
+                } else {
+                    throw new Error("Respuesta no válida");
+                }
+
+            } catch (error) {
+                message.textContent = "No se ha podido enviar. Inténtalo de nuevo o escríbenos a ecpurjc@gmail.com.";
+                message.classList.add("is-error");
+            } finally {
+                submitButton.disabled = false;
+            }
 
         });
 

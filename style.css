@@ -1363,18 +1363,22 @@ a {
     margin: 0 auto; 
 }
 
-/* Contacto */
-.contact-form .button { 
-    align-self: flex-start; 
+/* Contacto: estados del formulario y enlace */
+.form-message.is-success { color: var(--color-primary-dark); }
+.form-message.is-error { color: var(--color-error); }
+
+.contact-form .button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
-.contact-mail { 
-    margin: 35px 0 0; 
-    text-align: center; 
-    font-weight: 700; 
-    color: var(--color-text); 
+
+.contact-mail a {
+    text-decoration: underline;
+    color: var(--color-secondary-dark);
 }
-.contact-mail i { 
-    margin-right: 8px; 
+
+.contact-mail a:hover {
     color: var(--color-pink);
 }
 
@@ -1399,3 +1403,5 @@ a {
         left: -35px; 
     }
 }
+
+
