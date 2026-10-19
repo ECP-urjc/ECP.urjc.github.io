@@ -1,7 +1,4 @@
-/* ==================== WEB - CSS ==================== */
-
-
-/* ==================== VARIABLES ==================== */
+/* VARIABLES */
 
 :root {
     /* PALETA PRINCIPAL DEL JUEGO */
@@ -47,7 +44,7 @@
 }
 
 
-/* ==================== RESET ==================== */
+/*  RESET  */
 
 *,
 *::before,
@@ -77,7 +74,7 @@ body {
 }
 
 
-/* ==================== FONDO ANIMADO ==================== */
+/*  FONDO ANIMADO  */
 
 body::before {
     content: "";
@@ -228,7 +225,7 @@ a {
 }
 
 
-/* ==================== ESTRUCTURA GENERAL ==================== */
+/*  ESTRUCTURA GENERAL  */
 
 .container {
     width: min(100% - 40px, var(--container-width));
@@ -285,7 +282,7 @@ a {
 }
 
 
-/* ==================== NAVBAR ==================== */
+/*  NAVBAR  */
 
 .site-nav {
     position: fixed;
@@ -381,7 +378,7 @@ a {
 }
 
 
-/* ==================== JUEGO ==================== */
+/*  JUEGO  */
 
 .hero {
     display: flex;
@@ -447,7 +444,7 @@ a {
 }
 
 
-/* ==================== PORTFOLIO ==================== */
+/*  PORTFOLIO  */
 
 .portfolio-section {
 
@@ -537,7 +534,7 @@ a {
 }
 
 
-/* ==================== EQUIPO ==================== */
+/*  EQUIPO  */
 
 .contenedor {
     position: relative;
@@ -698,7 +695,7 @@ a {
 }
 
 
-/* ==================== SOBRE EL JUEGO ==================== */
+/*  SOBRE EL JUEGO  */
 
 .about-section {
     color: var(--color-white);
@@ -739,7 +736,7 @@ a {
 }
 
 
-/* ==================== BOTONES ==================== */
+/*  BOTONES  */
 
 .button {
     display: inline-flex;
@@ -798,14 +795,11 @@ a {
 }
 
 
-/* ==================== CONTACTO ==================== */
+/*  CONTACTO  */
 
 .contact-section {
 
-    /*
-        Transparencia para dejar pasar
-        ligeramente el fondo animado.
-    */
+    /* Transparencia para dejar pasar ligeramente el fondo animado.*/
     background: rgba(224, 224, 224, 0.88);
 }
 
@@ -878,18 +872,14 @@ a {
 }
 
 
-/* ==================== FOOTER ==================== */
+/*  FOOTER  */
 
 .site-footer {
     padding-top: 70px;
 
     color: var(--color-white);
 
-    /*
-        Casi opaco para que el footer siga teniendo
-        aspecto oscuro, pero sin cortar de golpe
-        el fondo animado.
-    */
+    /*casi opaco para que el footer siga teniendo aspecto oscuro, pero sin cortar de golpe el fondo animado.*/
     background: rgba(26, 26, 26, 0.94);
 
     border-top: 3px solid var(--color-primary);
@@ -963,7 +953,7 @@ a {
 }
 
 
-/* ==================== MODALES ==================== */
+/*  MODALES  */
 
 .modal {
     position: fixed;
@@ -1050,7 +1040,7 @@ a {
 }
 
 
-/* ==================== TABLET ==================== */
+/*  TABLET  */
 
 @media (max-width: 900px) {
 
@@ -1070,7 +1060,7 @@ a {
 }
 
 
-/* ==================== MÓVIL ==================== */
+/*  MÓVIL  */
 
 @media (max-width: 700px) {
 
@@ -1154,7 +1144,7 @@ a {
 }
 
 
-/* ==================== MÓVILES PEQUEÑOS ==================== */
+/*  MÓVILES PEQUEÑOS  */
 
 @media (max-width: 420px) {
 
@@ -1171,7 +1161,7 @@ a {
     }
 }
 
-/* ==================== EXTRAS ==================== */
+/*  EXTRAS  */
 
 .nav-link { 
     padding: 10px 11px; 

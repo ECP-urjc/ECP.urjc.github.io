@@ -1,13 +1,9 @@
-// ============================================================
-// XNOMBRE - ECP
+// THE LAST CURE - ECP
 // JavaScript de la web
-// ============================================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // ========================================================
     // NAVBAR: cambia de aspecto al hacer scroll
-    // ========================================================
 
     const navbar = document.querySelector(".site-nav");
 
@@ -25,9 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateNavbar();
 
 
-    // ========================================================
     // MENÚ MÓVIL
-    // ========================================================
 
     const navToggle = document.querySelector(".nav-toggle");
     const navMenu = document.querySelector(".nav-menu");
@@ -75,9 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ========================================================
     // NAVBAR ACTIVA SEGÚN LA SECCIÓN
-    // ========================================================
 
     const sections = document.querySelectorAll("section[id]");
     const links = document.querySelectorAll(".nav-link");
@@ -120,16 +112,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    // ========================================================
     // MODALES DEL PORTFOLIO
-    // ========================================================
 
     const portfolioCards = document.querySelectorAll("[data-modal]");
     const modals = document.querySelectorAll(".modal");
     const modalCloseButtons = document.querySelectorAll(".modal-close");
 
 
-    // Abrir modal
+    //abrir modal
     portfolioCards.forEach(function (card) {
 
         card.addEventListener("click", function () {
@@ -150,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Cerrar modal con botón X
+    //cerrar modal con botón X
     modalCloseButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
@@ -167,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Cerrar modal haciendo click fuera
+    //cerrar modal haciendo click fuera
     modals.forEach(function (modal) {
 
         modal.addEventListener("click", function (event) {
@@ -184,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // Cerrar modal pulsando ESC
+    //cerrar modal pulsando ESC
     document.addEventListener("keydown", function (event) {
 
         if (event.key === "Escape") {
@@ -200,10 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // ========================================================
-    // ACCESIBILIDAD
-    // Permite abrir tarjetas con ENTER o ESPACIO
-    // ========================================================
+    //abrir tarjetas con ENTER o ESPACIO
 
     portfolioCards.forEach(function (card) {
 
@@ -221,9 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    // ========================================================
     // FORMULARIO DE CONTACTO
-    // ========================================================
 
     const contactForm = document.querySelector(".contact-form");
 
