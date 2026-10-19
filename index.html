@@ -313,23 +313,23 @@
                 <h2 class="section-title">Contacto y redes</h2>
                 <div class="section-divider"><span></span><i class="fa-solid fa-star"></i><span></span></div>
 
-                <form class="contact-form" action="https://formsubmit.co/ecpurjc@gmail.com" method="POST">
-                    <!-- Campos ocultos de configuración -->
-                    <input type="hidden" name="_subject" value="Nuevo mensaje desde la web de THE LAST CURE">
-                    <input type="hidden" name="_template" value="table">
-                    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+                <form class="contact-form" id="contactForm">
+                    <input type="hidden" name="access_key" value="25d0bcfa-4fd0-45a3-b0c1-228f3aeaf6f5">
+                    <input type="hidden" name="subject" value="Nuevo mensaje desde la web de THE LAST CURE">
+                    <input type="hidden" name="from_name" value="Web THE LAST CURE">
+                    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
                     <div class="form-group">
                         <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" required>
+                        <input type="text" id="nombre" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Correo</label>
+                        <label for="email">Tu correo</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                        <textarea id="mensaje" name="message" rows="5" required></textarea>
                     </div>
 
                     <button type="submit" class="button button-primary">Enviar mensaje</button>

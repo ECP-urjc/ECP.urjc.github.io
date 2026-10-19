@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // FORMULARIO DE CONTACTO
     // ========================================================
 
-        const contactForm = document.querySelector(".contact-form");
+    const contactForm = document.querySelector(".contact-form");
 
     if (contactForm) {
 
@@ -241,24 +241,28 @@ document.addEventListener("DOMContentLoaded", function () {
             submitButton.disabled = true;
 
             try {
-                const response = await fetch("https://formsubmit.co/ajax/ecpurjc@gmail.com", {
+                const response = await fetch("https://api.web3forms.com/submit", {
                     method: "POST",
-                    headers: { "Accept": "application/json" },
-                    body: new FormData(contactForm)
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(Object.fromEntries(new FormData(contactForm)))
                 });
 
                 const data = await response.json();
 
-                if (response.ok && String(data.success) === "true") {
+                if (data.success) {
                     message.textContent = "¡Mensaje enviado! Te responderemos pronto.";
                     message.classList.add("is-success");
                     contactForm.reset();
                 } else {
-                    throw new Error("Respuesta no válida");
+                    throw new Error(data.message || "Error al enviar");
                 }
 
             } catch (error) {
-                message.textContent = "No se ha podido enviar. Inténtalo de nuevo o escríbenos a ecpurjc@gmail.com.";
+                console.error(error);
+                message.textContent = "No se ha podido enviar. Escríbenos a ecpurjc@gmail.com.";
                 message.classList.add("is-error");
             } finally {
                 submitButton.disabled = false;
