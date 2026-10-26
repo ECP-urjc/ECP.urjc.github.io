@@ -1395,3 +1395,436 @@ a {
 }
 
 
+
+
+/* ==================== HERO: LOGO GRANDE A LA IZQUIERDA, INFO A LA DERECHA ==================== */
+
+.hero .hero-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(30px, 5vw, 80px);
+    width: min(100% - 40px, 1300px);
+}
+
+/* Logo del juego: columna izquierda, lo más grande posible */
+.hero .hero-media {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    margin: 0;
+}
+
+.hero .hero-media img {
+    width: 100%;
+    max-height: 72vh;
+    margin-inline: auto;
+    object-fit: contain;
+}
+
+/* Toda la información: columna derecha */
+.hero .hero-content > div:first-child {
+    grid-column: 2;
+    grid-row: 1;
+    order: 0;
+    text-align: left;
+}
+
+.hero .studio-logo {
+    width: clamp(110px, 12vw, 160px);
+    margin: 0 0 10px;
+}
+
+.hero .hero-title {
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+}
+
+.hero .hero-subtitle {
+    margin-top: 14px;
+}
+
+.hero .hero-text {
+    max-width: 520px;
+    margin: 18px 0 28px;
+}
+
+.hero .button {
+    margin: 0 10px 10px 0;
+}
+
+.hero .button + .button {
+    margin-left: 0;
+}
+
+/* Tablet y móvil: logo arriba, info debajo */
+@media (max-width: 900px) {
+
+    .hero .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero .hero-media {
+        grid-column: 1;
+        grid-row: 1;
+        width: min(420px, 80vw);
+        margin-inline: auto;
+    }
+
+    .hero .hero-media img {
+        max-height: 45vh;
+    }
+
+    .hero .hero-content > div:first-child {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+    }
+
+    .hero .studio-logo {
+        margin: 0 auto 10px;
+    }
+
+    .hero .hero-text {
+        margin: 18px auto 28px;
+    }
+
+    .hero .button,
+    .hero .button + .button {
+        margin: 0 5px 10px;
+    }
+}
+
+
+/* ==================== MOTION: ENTRADAS, SCROLL Y MICROINTERACCIONES ==================== */
+
+:root { --ease: cubic-bezier(0.22, 1, 0.36, 1); }
+
+:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 3px;
+}
+
+/* Barra de progreso de scroll */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-pink));
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    pointer-events: none;
+}
+
+/* Hero: entrada escalonada (solo CSS, funciona sin JS) */
+@keyframes rise { from { opacity: 0; translate: 0 28px; } to { opacity: 1; translate: 0 0; } }
+@keyframes pop { from { opacity: 0; scale: 0.92; } to { opacity: 1; scale: 1; } }
+@keyframes float { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
+
+.hero .hero-content > div:first-child > * {
+    animation: rise 0.9s var(--ease) both;
+    animation-delay: calc(var(--d, 0) * 90ms + 200ms);
+}
+.hero .hero-content > div:first-child > :nth-child(1) { --d: 0; }
+.hero .hero-content > div:first-child > :nth-child(2) { --d: 1; }
+.hero .hero-content > div:first-child > :nth-child(3) { --d: 2; }
+.hero .hero-content > div:first-child > :nth-child(4) { --d: 3; }
+.hero .hero-content > div:first-child > :nth-child(5) { --d: 4; }
+.hero .hero-content > div:first-child > :nth-child(6) { --d: 5; }
+.hero .hero-content > div:first-child > :nth-child(7) { --d: 6; }
+
+.hero .hero-media {
+    animation: pop 1.1s var(--ease) both;
+    translate: 0 calc(var(--py, 0) * 1px);
+}
+.hero .hero-media img { animation: float 6s ease-in-out 1.2s infinite; }
+
+/* Botones: brillo al pasar el cursor */
+.button { position: relative; overflow: hidden; isolation: isolate; }
+.button::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.45) 50%, transparent 65%);
+    translate: -120% 0;
+    transition: translate 0.7s var(--ease);
+}
+.button:hover::before { translate: 120% 0; }
+.button i { transition: transform 0.3s var(--ease); }
+.button:hover i { transform: translateX(3px) scale(1.15); }
+
+.social-links a { transition: transform 0.3s var(--ease), color var(--transition), background var(--transition), border-color var(--transition); }
+.social-links a:hover { transform: translateY(-3px); }
+
+/* Tarjetas: inclinación sutil, luz que sigue al cursor y sombra */
+.card {
+    position: relative;
+    transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    transition: transform 0.25s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.10), transparent 60%);
+    transition: opacity 0.3s ease;
+}
+.card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+.card:hover::after { opacity: 1; }
+
+.portfolio-card:hover { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35); }
+.portfolio-card { transition: transform var(--transition), border-color var(--transition), box-shadow 0.3s ease; }
+
+/* Revelados al hacer scroll (solo si hay JS y no se pide movimiento reducido) */
+.reveal {
+    transition:
+        opacity 0.8s var(--ease) calc(var(--i, 0) * 90ms),
+        translate 0.8s var(--ease) calc(var(--i, 0) * 90ms),
+        scale 0.8s var(--ease) calc(var(--i, 0) * 90ms),
+        transform 0.25s ease-out,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+.js .reveal { opacity: 0; translate: 0 28px; }
+.js .reveal.is-in { opacity: 1; translate: 0 0; }
+.js .section-title.reveal { translate: 0 40px; }
+.js .section-title.reveal.is-in { translate: 0 0; }
+.js .portfolio-card.reveal { scale: 0.95; }
+.js .portfolio-card.reveal.is-in { scale: 1; }
+
+.section-divider span { transition: scale 0.9s var(--ease) 0.15s; }
+.js .section-divider.reveal { opacity: 1; translate: none; }
+.js .section-divider.reveal:not(.is-in) span { scale: 0 1; }
+
+/* Movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
+        scroll-behavior: auto !important;
+    }
+    .hero .hero-media img { animation: none; }
+}
+
+
+/* ==================== EXTRAS DEL LABORATORIO: FICHA, BARRAS, TABLA, LETRA CAPITAL, :target ==================== */
+
+/* Ficha técnica (dl) */
+.ficha { margin: 0; font-size: 1.15rem; }
+.ficha div { display: flex; gap: 8px; margin: 0 0 8px; }
+.ficha dt { font-weight: 700; color: var(--color-primary); }
+.ficha dt::after { content: ":"; }
+.ficha dd { margin: 0; }
+
+/* Letra capital en el pitch (pseudo-elemento) */
+.about-grid .card:first-child p::first-letter {
+    float: left;
+    padding: 6px 10px 0 0;
+    font-family: var(--font-title);
+    font-size: 3.2rem;
+    line-height: 0.85;
+    color: var(--color-primary);
+}
+
+/* Gráfico de barras horizontal */
+.bars { list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 14px; }
+.bars li { display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; align-items: baseline; }
+.bar-value { font-family: var(--font-title); color: var(--color-accent); }
+.bar-track { grid-column: 1 / -1; height: 12px; overflow: hidden; border-radius: 99px; background: rgba(255, 255, 255, 0.12); }
+.bar-fill {
+    display: block;
+    width: calc(var(--v) * 1%);
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, var(--bar-a, var(--color-primary-dark)), var(--bar-b, var(--color-primary)));
+    transform-origin: 0 50%;
+    transition: transform 1s var(--ease) calc(0.3s + var(--k, 0) * 0.12s);
+}
+.bars li:nth-child(2) { --k: 1; }
+.bars li:nth-child(3) { --k: 2; }
+.bars li:nth-child(4) { --k: 3; }
+.card-grid-3 > .chart:nth-child(2) { --bar-a: var(--color-secondary-dark); --bar-b: var(--color-secondary); }
+.card-grid-3 > .chart:nth-child(3) { --bar-a: var(--color-accent-orange); --bar-b: var(--color-green); }
+.js .chart.reveal:not(.is-in) .bar-fill { transform: scaleX(0); }
+
+/* Tabla: filas alternas */
+.table tbody tr { transition: background 0.25s ease; }
+.table tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.05); }
+.table tbody tr:hover { background: rgba(107, 203, 46, 0.14); }
+
+/* :target — el título destella al llegar desde el menú */
+@keyframes target-pulse {
+    0% { text-shadow: 0 0 28px var(--color-primary), 0 0 4px white; }
+    100% { text-shadow: white 0 0 4px; }
+}
+.section:target .section-title { animation: target-pulse 1.4s ease; }
+
+/* Selector de atributo: enlaces externos del equipo */
+.contenedor .cara.atras .contenido a[target="_blank"]::after { content: " \2197"; }
+
+/* Menú con 9 enlaces en pantallas medianas */
+@media (max-width: 1100px) and (min-width: 701px) {
+    .nav-link { padding: 8px 7px; font-size: 0.9rem !important; }
+    .logo { font-size: 1.2rem; }
+}
+
+
+/* ==================== TARJETAS QUE GIRAN (capturas) ==================== */
+
+.portfolio-grid { gap: clamp(20px, 3vw, 36px); }
+
+.portfolio-card.flip-card {
+    overflow: visible;
+    aspect-ratio: 2695 / 3742;
+    perspective: 1400px;
+    border: 0;
+    background: none;
+}
+.portfolio-card.flip-card:hover,
+.portfolio-card.flip-card:focus { transform: none; border-color: transparent; }
+.portfolio-card.flip-card:hover img { transform: none; }
+
+.flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s var(--ease);
+}
+.flip-card:hover .flip-inner,
+.flip-card:focus-visible .flip-inner,
+.flip-card.is-flipped .flip-inner { transform: rotateY(180deg); }
+
+.flip-face {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+}
+.flip-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px;
+    padding: clamp(20px, 3vw, 32px);
+    text-align: center;
+    color: var(--color-text-light);
+    background:
+        radial-gradient(circle at 20% 15%, rgba(107, 203, 46, 0.22), transparent 55%),
+        radial-gradient(circle at 85% 90%, rgba(212, 57, 154, 0.22), transparent 55%),
+        var(--color-dark-2);
+}
+.flip-tag { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); }
+.flip-front h3 {
+    margin: 0;
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 3.4vw, 2.8rem);
+    line-height: 1;
+    color: var(--color-accent);
+    text-shadow: 3px 3px 0 var(--color-pink);
+}
+.flip-front p { margin: 0; line-height: 1.55; }
+.flip-icon { margin-top: 8px; color: var(--color-green); opacity: 0.8; }
+.flip-back { transform: rotateY(180deg); background: #fff; }
+.flip-back img { width: 100%; height: 100%; padding: 8px; object-fit: contain; }
+
+@media (max-width: 700px) {
+    .portfolio-card.flip-card { width: min(100%, 420px); margin-inline: auto; }
+}
+
+/* ==================== PANTALLA DE LA DEMO (itch.io) ==================== */
+
+.game-screen { max-width: 1000px; margin: 0 auto; }
+.game-bezel {
+    padding: clamp(10px, 2vw, 22px);
+    border: 2px solid var(--color-primary);
+    border-radius: 22px;
+    background: linear-gradient(145deg, #1d2a1c, #0c120c);
+    box-shadow:
+        0 0 0 6px rgba(0, 0, 0, 0.35),
+        0 0 60px rgba(107, 203, 46, 0.35),
+        0 0 120px rgba(212, 57, 154, 0.25),
+        inset 0 0 30px rgba(0, 0, 0, 0.6);
+}
+.game-stage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(10px, 3vw, 28px);
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 10px;
+    background: radial-gradient(circle at 50% 45%, rgba(107, 203, 46, 0.25), transparent 60%), #050805;
+}
+.game-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 3px);
+}
+.game-screen.is-playing .game-stage::after { display: none; }
+.game-poster { max-width: 80%; max-height: 58%; width: auto; object-fit: contain; }
+.game-stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+@keyframes ping { 0% { opacity: 0.7; transform: scale(1); } 100% { opacity: 0; transform: scale(1.7); } }
+.game-play {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: clamp(56px, 9vw, 84px);
+    height: clamp(56px, 9vw, 84px);
+    border: 0;
+    border-radius: 50%;
+    font-size: clamp(1.2rem, 2.4vw, 1.9rem);
+    color: var(--color-dark);
+    background: var(--color-primary);
+    transition: transform 0.3s var(--ease), background var(--transition);
+}
+.game-play::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid var(--color-primary);
+    animation: ping 1.8s ease-out infinite;
+}
+.game-play:hover { transform: scale(1.08); background: var(--color-accent); }
+
+.game-bar { display: flex; justify-content: space-between; align-items: center; margin-top: 14px; }
+.game-bar a,
+.game-fs {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 2px solid var(--color-green);
+    border-radius: 50px;
+    font-family: var(--font-title);
+    color: var(--color-white);
+    background: rgba(18, 23, 18, 0.88);
+    transition: background var(--transition), color var(--transition);
+}
+.game-bar a:hover,
+.game-fs:hover { color: var(--color-dark); background: var(--color-green); }
+.game-fs { display: none; }
+.game-screen.is-playing .game-fs { display: inline-flex; }
