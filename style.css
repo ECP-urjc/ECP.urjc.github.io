@@ -1769,7 +1769,7 @@ a {
     align-items: center;
     justify-content: center;
     gap: clamp(10px, 3vw, 28px);
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16 / 11;
     overflow: hidden;
     border-radius: 10px;
     background: radial-gradient(circle at 50% 45%, rgba(107, 203, 46, 0.25), transparent 60%), #050805;
