@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.documentElement.classList.add("js");
 
-    var SELECTOR = ".section-title, .section-divider, .subtitle, .card, .portfolio-card, .cuadro, .video-container, .table-wrap, .game-screen, .tag-list li, .contact-form, .contact-mail";
+    var SELECTOR = ".section-title, .section-divider, .subtitle, .card, .portfolio-card, .cuadro, .video-container, .table-wrap, .game-screen, .desplegable, .tag-list li, .contact-form, .contact-mail";
     var targets = document.querySelectorAll(SELECTOR);
 
     var revealObserver = new IntersectionObserver(function (entries) {
@@ -389,4 +389,34 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+})();
+
+
+
+// CARRUSELES DE LOS PROYECTOS
+(function () {
+    "use strict";
+
+    var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    document.querySelectorAll(".carousel").forEach(function (carousel) {
+        var track = carousel.querySelector(".carousel-track");
+
+        function go(dir) {
+            var behavior = reduce.matches ? "auto" : "smooth";
+            var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+
+            // Al llegar al final vuelve a la primera foto, y al revés
+            if (dir > 0 && atEnd) {
+                track.scrollTo({ left: 0, behavior: behavior });
+            } else if (dir < 0 && track.scrollLeft <= 5) {
+                track.scrollTo({ left: track.scrollWidth, behavior: behavior });
+            } else {
+                track.scrollBy({ left: dir * track.clientWidth, behavior: behavior });
+            }
+        }
+
+        carousel.querySelector(".carousel-prev").addEventListener("click", function () { go(-1); });
+        carousel.querySelector(".carousel-next").addEventListener("click", function () { go(1); });
+    });
 })();
