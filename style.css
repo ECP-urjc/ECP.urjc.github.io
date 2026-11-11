@@ -1932,3 +1932,14 @@ a {
 /* Capturas de redes */
 .caps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 16px; }
 .caps-grid img { width: 100%; border: 2px solid rgba(107, 203, 46, 0.35); border-radius: 10px; background: #000; }
+
+
+/* ==================== EQUIPO: MÁS SEPARACIÓN PARA PODER PULSAR "RR.SS" ==================== */
+
+/* Separación entre filas (130px) y columnas (50px): la tarjeta de abajo ya no tapa el botón de la de arriba */
+.contenedor { gap: 130px 50px; }
+.contenedor .cuadro:hover { z-index: 3; }
+
+@media (max-width: 700px) {
+    .contenedor { gap: 130px 16px; }
+}
