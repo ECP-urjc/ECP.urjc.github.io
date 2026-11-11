@@ -1934,7 +1934,7 @@ a {
 .caps-grid img { width: 100%; border: 2px solid rgba(107, 203, 46, 0.35); border-radius: 10px; background: #000; }
 
 
-/* ==================== EQUIPO: MÁS SEPARACIÓN PARA PODER PULSAR "RR.SS" ==================== */
+/* EQUIPO: MÁS SEPARACIÓN PARA PODER PULSAR "RR.SS" */
 
 /* Separación entre filas (130px) y columnas (50px): la tarjeta de abajo ya no tapa el botón de la de arriba */
 .contenedor { gap: 130px 50px; }
