@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const modalCloseButtons = document.querySelectorAll(".modal-close");
 
 
-    //abrir modal
+    // abrir modal
     portfolioCards.forEach(function (card) {
 
         card.addEventListener("click", function () {
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    //cerrar modal con botón X
+    // cerrar modal con botón X
     modalCloseButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    //cerrar modal haciendo click fuera
+    // cerrar modal haciendo click fuera
     modals.forEach(function (modal) {
 
         modal.addEventListener("click", function (event) {
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    //cerrar modal pulsando ESC
+    // cerrar modal pulsando ESC
     document.addEventListener("keydown", function (event) {
 
         if (event.key === "Escape") {
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    //abrir tarjetas con ENTER o ESPACIO
+    // abrir tarjetas con ENTER o ESPACIO
 
     portfolioCards.forEach(function (card) {
 
@@ -206,6 +206,31 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
     });
+
+
+    // RESULTADOS: TARJETA "9 PROBLEMAS RESUELTOS" ABRE EL DESPLEGABLE
+
+    const btnProblemas = document.getElementById("btn-problemas");
+    const desplegableProblemas = document.getElementById("desplegable-problemas");
+
+    if (btnProblemas && desplegableProblemas) {
+        function syncProblemasState() {
+            const abierto = desplegableProblemas.open;
+            btnProblemas.setAttribute("aria-expanded", String(abierto));
+            btnProblemas.classList.toggle("is-open", abierto);
+        }
+
+        btnProblemas.addEventListener("click", function () {
+            desplegableProblemas.open = !desplegableProblemas.open;
+            syncProblemasState();
+
+            if (desplegableProblemas.open) {
+                desplegableProblemas.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+        });
+
+        desplegableProblemas.addEventListener("toggle", syncProblemasState);
+    }
 
 
     // FORMULARIO DE CONTACTO
@@ -298,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.documentElement.classList.add("js");
 
-    var SELECTOR = ".section-title, .section-divider, .subtitle, .card, .portfolio-card, .cuadro, .video-container, .table-wrap, .game-screen, .desplegable, .tag-list li, .contact-form, .contact-mail";
+    var SELECTOR = ".section-title, .section-divider, .subtitle, .card, .portfolio-card, .cuadro, .video-container, .table-wrap, .game-screen, .desplegable, .proyectos-bloque, .tag-list li, .contact-form, .contact-mail";
     var targets = document.querySelectorAll(SELECTOR);
 
     var revealObserver = new IntersectionObserver(function (entries) {
@@ -420,3 +445,80 @@ document.addEventListener("DOMContentLoaded", function () {
         carousel.querySelector(".carousel-next").addEventListener("click", function () { go(1); });
     });
 })();
+
+
+
+// MODAL DE ARTE (FILTROS POR CATEGORÍA + VISOR AMPLIADO) Y AUDIO
+document.addEventListener("DOMContentLoaded", function () {
+
+    // 1. Filtro por categorías en el modal de Arte y Diseño
+    const modalArte = document.getElementById("modal-arte");
+
+    if (modalArte) {
+        const filterButtons = modalArte.querySelectorAll(".art-filter-btn");
+        const artItems = modalArte.querySelectorAll(".art-item");
+
+        function showArtCategory(categoria) {
+            artItems.forEach(function (item) {
+                const coincide = item.getAttribute("data-category") === categoria;
+                item.hidden = !coincide;
+                item.style.display = coincide ? "" : "none";
+            });
+        }
+
+        filterButtons.forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                const categoria = btn.getAttribute("data-art-filter");
+
+                filterButtons.forEach(function (b) {
+                    const activo = b === btn;
+                    b.classList.toggle("is-active", activo);
+                    b.setAttribute("aria-selected", String(activo));
+                });
+
+                showArtCategory(categoria);
+            });
+        });
+
+        // Estado inicial: muestra solo la pestaña activa
+        const activeBtn = modalArte.querySelector(".art-filter-btn.is-active") || filterButtons[0];
+        if (activeBtn) {
+            showArtCategory(activeBtn.getAttribute("data-art-filter"));
+        }
+    }
+
+    // 2. Reproductor de audio: solo suena una pista a la vez y se pausa al cerrar el modal
+    const modalAudio = document.getElementById("modal-audio");
+
+    if (modalAudio) {
+        const audios = modalAudio.querySelectorAll("audio");
+
+        function pauseAllAudio(except) {
+            audios.forEach(function (audio) {
+                if (audio !== except) {
+                    audio.pause();
+                }
+            });
+        }
+
+        audios.forEach(function (audio) {
+            audio.addEventListener("play", function () {
+                pauseAllAudio(audio);
+            });
+        });
+
+        const closeAudioBtn = modalAudio.querySelector(".modal-close");
+        if (closeAudioBtn) {
+            closeAudioBtn.addEventListener("click", function () { pauseAllAudio(); });
+        }
+
+        modalAudio.addEventListener("click", function (event) {
+            if (event.target === modalAudio) pauseAllAudio();
+        });
+
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") pauseAllAudio();
+        });
+    }
+
+});
